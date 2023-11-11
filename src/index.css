@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+  @apply  bg-sky-300 left-0 rounded-r-full pr-[60%]
+}
+
+.input-select{
+@apply bg-primaryColor py-2 px-4 rounded-md block text-[13px] md:text-base
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.input-task{
+  @apply w-full bg-sky-300 rounded-full outline-none px-6 py-2
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  @apply bg-sky-200
+}
+
+input[type="checkbox"]::after{
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  transform: scale(0); /* Awalnya disetel ke 0 */
+  transition: 0.2s transform ease-in-out; /* Perbaiki nilai waktu transisi */
+  @apply bg-primaryColor
+}
+
+input[type="checkbox"]:checked::after{
+  transform: scale(1);
+  z-index: 66;
+}
+
+.hidden-text {
+  @apply whitespace-nowrap overflow-hidden text-ellipsis
+}
